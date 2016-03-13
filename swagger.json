@@ -360,7 +360,7 @@
     },
     "/promoter" : {
       "post" : {
-        "tags" : [ "drawer" ],
+        "tags" : [ "shelf" ],
         "summary" : "Create drawer",
         "description" : ".",
         "operationId" : "createPromoter",
