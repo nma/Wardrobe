@@ -34,11 +34,11 @@ class DefaultApi (implicit val swagger: Swagger) extends ScalatraServlet
   )
 
   post("/shelf",operation(addShelfOperation)) {
-    
-    
-    
-                
-bodyParam[Shelf]("body").description("")
+
+
+
+
+    val body = bodyParam[Shelf]("body").description("")
     
     println("body: " + body)
   

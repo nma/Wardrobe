@@ -34,11 +34,11 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
   )
 
   post("/stack/",operation(createStackOperation)) {
-    
-    
-    
-                
-bodyParam[Stack]("body").description("")
+
+
+
+
+    val body = bodyParam[Stack]("body").description("")
     
     println("body: " + body)
   

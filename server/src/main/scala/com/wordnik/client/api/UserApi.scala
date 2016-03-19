@@ -38,7 +38,7 @@ class UserApi (implicit val swagger: Swagger) extends ScalatraServlet
     
     
                 
-bodyParam[User]("body").description("")
+    val body = bodyParam[User]("body").description("")
     
     println("body: " + body)
   
@@ -52,11 +52,11 @@ bodyParam[User]("body").description("")
   )
 
   post("/user/createWithArray",operation(createUsersWithArrayInputOperation)) {
-    
-    
-    
-                
-bodyParam[List[User]]("body").description("")
+
+
+
+
+    val body = bodyParam[List[User]]("body").description("")
     
     println("body: " + body)
   
@@ -70,11 +70,11 @@ bodyParam[List[User]]("body").description("")
   )
 
   post("/user/createWithList",operation(createUsersWithListInputOperation)) {
-    
-    
-    
-                
-bodyParam[List[User]]("body").description("")
+
+
+
+
+    val body = bodyParam[List[User]]("body").description("")
     
     println("body: " + body)
   
@@ -159,11 +159,11 @@ bodyParam[List[User]]("body").description("")
 
     
     println("username: " + username)
-  
-    
-    
-                
-bodyParam[User]("body").description("")
+
+
+
+
+    val body = bodyParam[User]("body").description("")
     
     println("body: " + body)
   

@@ -36,11 +36,11 @@ class ShelfApi (implicit val swagger: Swagger) extends ScalatraServlet
   )
 
   post("/drawer/",operation(createDrawerOperation)) {
-    
-    
-    
-                
-bodyParam[Drawer]("body").description("")
+
+
+
+
+    val body = bodyParam[Drawer]("body").description("")
     
     println("body: " + body)
   
@@ -143,11 +143,11 @@ bodyParam[Drawer]("body").description("")
   )
 
   post("/promoter",operation(createPromoterOperation)) {
-    
-    
-    
-                
-bodyParam[Drawer]("body").description("")
+
+
+
+
+    val body = bodyParam[Drawer]("body").description("")
     
     println("body: " + body)
   
