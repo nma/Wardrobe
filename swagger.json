@@ -24,6 +24,7 @@
   "paths" : {
     "/shelf" : {
       "post" : {
+        "tags" : [ "shelf" ],
         "produces" : [ "application/xml", "application/json" ],
         "consumes" : [ "application/xml", "application/json" ],
         "operationId" : "addShelf",
@@ -270,6 +271,27 @@
       }
     },
     "/stack/" : {
+      "get" : {
+        "tags" : [ "stack" ],
+        "summary" : "Get stacks",
+        "description" : ".",
+        "operationId" : "getStacks",
+        "produces" : [ "application/xml", "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Stack"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "stack not found"
+          }
+        }
+      },
       "post" : {
         "tags" : [ "stack" ],
         "summary" : "Create stack",

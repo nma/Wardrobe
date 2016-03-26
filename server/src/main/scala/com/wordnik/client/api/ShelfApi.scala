@@ -28,6 +28,20 @@ class ShelfApi (implicit val swagger: Swagger) extends ScalatraServlet
     contentType = formats("json")
     response.headers += ("Access-Control-Allow-Origin" -> "*")
   }
+
+  val addShelfOperation = (apiOperation[Unit]("addShelf")
+    summary ""
+    parameters(bodyParam[Shelf]("body").description(""))
+    )
+
+  post("/shelf",operation(addShelfOperation)) {
+
+
+    val body = bodyParam[Shelf]("body").description("")
+
+    println("body: " + body)
+
+  }
   
 
   val createDrawerOperation = (apiOperation[Unit]("createDrawer")

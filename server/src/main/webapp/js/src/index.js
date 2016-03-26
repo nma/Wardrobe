@@ -16,8 +16,6 @@ if (typeof module === 'object' && module.exports) {
   
   Wardrobe.ShelfApi = require('./api/ShelfApi.js');
   
-  Wardrobe.DefaultApi = require('./api/DefaultApi.js');
-  
   Wardrobe.StackApi = require('./api/StackApi.js');
   
   module.exports = Wardrobe;
