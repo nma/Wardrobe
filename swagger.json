@@ -24,6 +24,7 @@
   "paths" : {
     "/shelf" : {
       "post" : {
+        "tags" : [ "shelf" ],
         "produces" : [ "application/xml", "application/json" ],
         "consumes" : [ "application/xml", "application/json" ],
         "operationId" : "addShelf",
