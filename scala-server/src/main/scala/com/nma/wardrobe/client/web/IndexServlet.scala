@@ -1,4 +1,4 @@
-package com.wordnik.client.web
+package com.nma.wardrobe.client.web
 
 import org.scalatra.ScalatraServlet
 import org.scalatra.scalate.ScalateSupport

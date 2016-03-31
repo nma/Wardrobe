@@ -1,7 +1,7 @@
-package com.wordnik.client.model
+package com.nma.wardrobe.client.model
 
-import com.wordnik.client.model.Drawer
-import com.wordnik.client.model.Promoter
+import com.nma.wardrobe.client.model.Drawer
+import com.nma.wardrobe.client.model.Promoter
 
 
 case class Shelf (

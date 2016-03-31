@@ -1,4 +1,4 @@
-package com.wordnik.client.model
+package com.nma.wardrobe.client.model
 
 
 

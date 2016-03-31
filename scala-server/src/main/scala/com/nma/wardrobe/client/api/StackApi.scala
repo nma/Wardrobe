@@ -1,6 +1,6 @@
-package com.wordnik.client.api
+package com.nma.wardrobe.client.api
 
-import com.wordnik.client.model.Stack
+import com.nma.wardrobe.client.model.Stack
 
 import java.io.File
 

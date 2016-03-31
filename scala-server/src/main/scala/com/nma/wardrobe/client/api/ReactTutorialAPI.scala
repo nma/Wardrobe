@@ -1,10 +1,12 @@
-package com.wordnik.client.api
+package com.nma.wardrobe.client.api
 
 import java.io.{FileInputStream, InputStream}
 
 import org.json4s.{DefaultFormats, Formats}
 import org.scalatra.ScalatraServlet
 import org.scalatra.json.JacksonJsonSupport
+
+import scala.xml.XML
 
 /**
   * Created by nickma on 2016-03-19.
@@ -19,7 +21,8 @@ class ReactTutorialAPI extends ScalatraServlet
   }
 
   post("/") {
-    print("post")
+    println("post")
+    println(request.body)
   }
 
   get("/") {

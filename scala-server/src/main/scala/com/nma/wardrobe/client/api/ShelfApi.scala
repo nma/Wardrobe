@@ -1,8 +1,8 @@
-package com.wordnik.client.api
+package com.nma.wardrobe.client.api
 
-import com.wordnik.client.model.Drawer
-import com.wordnik.client.model.Promoter
-import com.wordnik.client.model.Shelf
+import com.nma.wardrobe.client.model.Drawer
+import com.nma.wardrobe.client.model.Promoter
+import com.nma.wardrobe.client.model.Shelf
 
 import java.io.File
 

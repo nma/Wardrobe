@@ -1,7 +1,6 @@
-package com.wordnik.client.model
+package com.nma.wardrobe.client.model
 
-import com.wordnik.client.model.Shelf
-
+import com.nma.wardrobe.client.model.Shelf
 
 case class Stack (
   id: Int,

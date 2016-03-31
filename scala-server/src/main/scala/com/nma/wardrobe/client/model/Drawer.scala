@@ -1,6 +1,6 @@
-package com.wordnik.client.model
+package com.nma.wardrobe.client.model
 
-import com.wordnik.client.model.Promoter
+import com.nma.wardrobe.client.model.Promoter
 import java.util.Date
 
 
