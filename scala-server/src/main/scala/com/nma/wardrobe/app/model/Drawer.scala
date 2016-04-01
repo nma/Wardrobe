@@ -1,6 +1,6 @@
-package com.nma.wardrobe.client.model
+package com.nma.wardrobe.app.model
 
-import com.nma.wardrobe.client.model.Promoter
+import com.nma.wardrobe.app.model.Promoter
 import java.util.Date
 
 

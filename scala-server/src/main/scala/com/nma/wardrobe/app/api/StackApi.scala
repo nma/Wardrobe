@@ -1,6 +1,6 @@
-package com.nma.wardrobe.client.api
+package com.nma.wardrobe.app.api
 
-import com.nma.wardrobe.client.model.Stack
+import com.nma.wardrobe.app.model.Stack
 
 import java.io.File
 

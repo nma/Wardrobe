@@ -1,11 +1,10 @@
 package io.swagger.app
 
 import _root_.akka.actor.ActorSystem
-
-import org.scalatra.swagger.{ ApiInfo, SwaggerWithAuth, Swagger }
+import org.scalatra.swagger.{ApiInfo, Swagger, SwaggerWithAuth}
 import org.scalatra.swagger.{JacksonSwaggerBase, Swagger}
 import org.scalatra.ScalatraServlet
-import org.json4s.{DefaultFormats, Formats}
+import org.json4s.{DefaultFormats, Formats, JValue, JsonInput}
 
 class ResourcesApp(implicit protected val system: ActorSystem, val swagger: SwaggerApp)
   extends ScalatraServlet with JacksonSwaggerBase {

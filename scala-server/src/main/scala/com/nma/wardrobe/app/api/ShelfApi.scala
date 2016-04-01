@@ -1,8 +1,8 @@
-package com.nma.wardrobe.client.api
+package com.nma.wardrobe.app.api
 
-import com.nma.wardrobe.client.model.Drawer
-import com.nma.wardrobe.client.model.Promoter
-import com.nma.wardrobe.client.model.Shelf
+import com.nma.wardrobe.app.model.Drawer
+import com.nma.wardrobe.app.model.Promoter
+import com.nma.wardrobe.app.model.Shelf
 
 import java.io.File
 

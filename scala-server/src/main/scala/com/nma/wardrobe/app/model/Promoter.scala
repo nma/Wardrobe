@@ -1,4 +1,4 @@
-package com.nma.wardrobe.client.model
+package com.nma.wardrobe.app.model
 
 
 

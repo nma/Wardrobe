@@ -1,9 +1,9 @@
-import com.nma.wardrobe.client.api._
+import com.nma.wardrobe.app.api._
 import akka.actor.ActorSystem
 import _root_.io.swagger.app.{ResourcesApp, SwaggerApp}
 import javax.servlet.ServletContext
 
-import com.nma.wardrobe.client.web.IndexServlet
+import com.nma.wardrobe.app.web.IndexServlet
 import org.scalatra.LifeCycle
 
 class ScalatraBootstrap extends LifeCycle {

@@ -1,4 +1,4 @@
-package com.nma.wardrobe.client.web
+package com.nma.wardrobe.app.web
 
 import org.scalatra.ScalatraServlet
 import org.scalatra.scalate.ScalateSupport
