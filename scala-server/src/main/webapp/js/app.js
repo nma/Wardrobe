@@ -48,14 +48,29 @@ var ShelfList = React.createClass({
 var Stack = React.createClass({
   render: function() {
     return (
-      <div class="container">
+      <div >
         <Shelf name="bob">
-            Hello World! Injected Stack Body Text
+        test
         </Shelf>
       </div>
     );
   }
 });
+
+var StackList = React.createClass({
+  render: function() {
+    return (
+      <li role="presentation">
+      A Stack
+      </li>
+    );
+  }
+});
+
+ReactDOM.render(
+  <StackList />,
+  document.getElementById('stacks')
+);
 
 ReactDOM.render(
   <Stack />,

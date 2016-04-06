@@ -9,6 +9,11 @@
   "moduleType": [],
   "license": "MIT",
   "private": true,
+  "dependencies": {
+    "bootstrap": "latest",
+    "tether": "latest",
+    "bootstrap-drawer": "latest"
+  }, 
   "ignore": [
     "**/.*",
     "node_modules",
