@@ -41,6 +41,7 @@ libraryDependencies ++= Seq(
   "org.eclipse.jetty"        % "jetty-webapp"                   % "9.2.3.v20140905" % "container;compile;test",
   "org.eclipse.jetty.orbit"  % "javax.servlet"                  % "3.0.0.v201112011016" % "container;compile;provided;test" artifacts (Artifact("javax.servlet", "jar", "jar")),
   "org.jongo"                % "jongo"                          % "1.2",
+  "com.amazonaws" % "aws-java-sdk" % "1.10.67",
   "org.apache.httpcomponents" % "httpclient" % "4.5.2"
 )
 

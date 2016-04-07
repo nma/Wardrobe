@@ -1,14 +1,13 @@
 package com.nma.wardrobe.app.api
 
 import com.nma.wardrobe.app.model.Stack
+import java.io.{File, InputStream}
 
-import java.io.File
-
-import org.scalatra.{ TypedParamSupport, ScalatraServlet }
+import org.scalatra.{ScalatraServlet, TypedParamSupport}
 import org.scalatra.swagger._
 import org.json4s._
 import org.json4s.JsonDSL._
-import org.scalatra.json.{ JValueResult, JacksonJsonSupport }
+import org.scalatra.json.{JValueResult, JacksonJsonSupport}
 import org.scalatra.servlet.{FileUploadSupport, MultipartConfig, SizeConstraintExceededException}
 
 import scala.collection.JavaConverters._
@@ -26,7 +25,17 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
     contentType = formats("json")
     response.headers += ("Access-Control-Allow-Origin" -> "*")
   }
-  
+
+
+  val getStackOperation = (apiOperation[Unit]("getStack")
+    summary "Get stacks"
+  )
+
+  get("/stack/", operation(getStackOperation)) {
+    println("get all stacks")
+    val stream : InputStream = getClass.getResourceAsStream("/stacks.json")
+    readJsonFromStream(stream)
+  }
 
   val createStackOperation = (apiOperation[Unit]("createStack")
       summary "Create stack"
