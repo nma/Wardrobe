@@ -7,6 +7,7 @@ import { AppComponent } from './app/core/components/app/app';
 import { ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy } from 'angular2/router';
 import { HTTP_PROVIDERS } from 'angular2/http';
 import { UserService } from './app/auth/services/user';
+import { StackService } from './app/stack/services/stack';
 
 if (ENVIRONMENT === 'production') {
   enableProdMode();
@@ -17,5 +18,5 @@ bootstrap(AppComponent, [
   ROUTER_PROVIDERS,
   TRANSLATE_PROVIDERS,
   provide(LocationStrategy, { useClass: HashLocationStrategy }),
-  UserService
+  UserService, StackService
 ]);

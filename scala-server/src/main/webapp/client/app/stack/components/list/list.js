@@ -10,13 +10,21 @@ import { ListItemComponent } from './../list_item/list_item';
     directives: [ROUTER_DIRECTIVES, ListItemComponent],
     changeDetection: ChangeDetectionStrategy.Detached
 })
-export class StackListComponent {
+export class ListComponent {
     static get parameters() {
         return [[StackService]];
     }
 
-    constructor(postService) {
+    constructor(stackService) {
         this._stackService = stackService;
+    }
+
+    ngOnInit() {
+        this._stackService.refreshStacks();
+    }
+
+    getRemoteStacks() {
+        return this._stackService.remoteStacks;
     }
 
 }

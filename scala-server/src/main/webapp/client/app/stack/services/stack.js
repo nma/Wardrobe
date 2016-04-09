@@ -4,8 +4,8 @@ import { BehaviorSubject } from 'rxjs';
 import { request } from '../../auth/helpers/request';
 
 @Injectable()
-export class PostService {
-  remotePosts = new BehaviorSubject([]);
+export class StackService {
+  remoteStacks = new BehaviorSubject([]);
 
   static get parameters() {
     return [[Http]];
@@ -15,19 +15,19 @@ export class PostService {
     this._http = http;
   }
 
-  refreshPosts() {
-    let postsResponse = this._http.get('/stack')
+  refreshStacks() {
+    let stacksResponse = this._http.get('/Stack/stack/')
       .map(res => res.json());
 
-    postsResponse.subscribe(
-        (posts) => {
-          this.remotePosts.next(posts);
+    stacksResponse.subscribe(
+        (stacks) => {
+          this.remoteStacks.next(stacks);
         },
         (error) => {
           console.error(error);
         }
       );
 
-    return postsResponse;
+    return stacksResponse;
   }
 }

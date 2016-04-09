@@ -60,7 +60,7 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
       parameters(pathParam[Long]("stackId").description(""))
   )
 
-  get("/stack/{stackId}",operation(stackStackIdGetOperation)) {
+  get("/stack/\\{stackId\\}",operation(stackStackIdGetOperation)) {
     
     
     
@@ -79,7 +79,7 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
       parameters(pathParam[Long]("stackId").description(""))
   )
 
-  put("/stack/{stackId}",operation(stackStackIdPutOperation)) {
+  put("/stack/\\{stackId\\}",operation(stackStackIdPutOperation)) {
     
     
     
@@ -98,7 +98,7 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
       parameters(pathParam[Long]("stackId").description(""))
   )
 
-  delete("/stack/{stackId}",operation(stackStackIdDeleteOperation)) {
+  delete("/stack/\\{stackId\\}",operation(stackStackIdDeleteOperation)) {
     
     
     
