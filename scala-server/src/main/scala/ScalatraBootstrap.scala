@@ -15,8 +15,7 @@ class ScalatraBootstrap extends LifeCycle {
       context mount (new UserApi, "/User/*")
       context mount (new ShelfApi, "/Shelf/*")
       context mount (new StackApi, "/Stack/*")
-      context mount (new ReactTutorialAPI, "/api/comments/*")
-      
+
       context mount (new ResourcesApp, "/api-docs/*")
 
       context mount (new IndexServlet, "/")

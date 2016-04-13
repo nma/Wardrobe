@@ -3,7 +3,7 @@
 module.exports = {
   client: {
     source: ['client/**/*.{html,css,ico,ssp}', '!**/app/**'],
-    destination: 'dist/webapp',
+    destination: '../scala-server/src/main/webapp/app',
     app: ['client/**/*.js']
   },
   general: {

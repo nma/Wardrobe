@@ -1,6 +1,6 @@
 package com.nma.wardrobe.app.api
 
-import com.nma.wardrobe.app.model.Stack
+import com.nma.wardrobe.app.model.{Shelf, Stack}
 import java.io.{File, InputStream}
 
 import org.scalatra.{ScalatraServlet, TypedParamSupport}
@@ -33,8 +33,14 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
 
   get("/stack/", operation(getStackOperation)) {
     println("get all stacks")
-    val stream : InputStream = getClass.getResourceAsStream("/stacks.json")
-    readJsonFromStream(stream)
+
+    val stack = new Stack(
+      1,
+      "bob",
+      "admin",
+      List[Shelf]()
+    )
+    stack
   }
 
   val createStackOperation = (apiOperation[Unit]("createStack")

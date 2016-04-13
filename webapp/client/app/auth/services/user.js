@@ -26,7 +26,7 @@ export class UserService {
 
   login(credentials) {
     return this._http
-      .post('/login', JSON.stringify(credentials), { headers: request.getJsonHeaders() })
+      .post('/User/login', JSON.stringify(credentials), { headers: request.getJsonHeaders() })
       .map(res => res.json())
       .map((res) => {
         if (res.success) {
