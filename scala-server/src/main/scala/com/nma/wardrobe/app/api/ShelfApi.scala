@@ -3,14 +3,13 @@ package com.nma.wardrobe.app.api
 import com.nma.wardrobe.app.model.Drawer
 import com.nma.wardrobe.app.model.Promoter
 import com.nma.wardrobe.app.model.Shelf
-
 import java.io.File
 
-import org.scalatra.{ TypedParamSupport, ScalatraServlet }
+import org.scalatra.{NotImplemented, ScalatraServlet, TypedParamSupport}
 import org.scalatra.swagger._
 import org.json4s._
 import org.json4s.JsonDSL._
-import org.scalatra.json.{ JValueResult, JacksonJsonSupport }
+import org.scalatra.json.{JValueResult, JacksonJsonSupport}
 import org.scalatra.servlet.{FileUploadSupport, MultipartConfig, SizeConstraintExceededException}
 
 import scala.collection.JavaConverters._
@@ -40,7 +39,7 @@ class ShelfApi (implicit val swagger: Swagger) extends ScalatraServlet
     val body = bodyParam[Shelf]("body").description("")
 
     println("body: " + body)
-
+    NotImplemented
   }
   
 

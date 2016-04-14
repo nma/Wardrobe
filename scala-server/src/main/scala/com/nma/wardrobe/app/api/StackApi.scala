@@ -3,8 +3,8 @@ package com.nma.wardrobe.app.api
 import com.nma.wardrobe.app.model.{Shelf, Stack}
 import java.io.{File, InputStream}
 
-import com.nma.wardrobe.StackApiImpl
-import org.scalatra.{ScalatraServlet, TypedParamSupport}
+import com.nma.wardrobe.StackDao
+import org.scalatra.{NotImplemented, ScalatraServlet, TypedParamSupport}
 import org.scalatra.swagger._
 import org.json4s._
 import org.json4s.JsonDSL._
@@ -21,7 +21,7 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
 
   protected val applicationDescription: String = "StackApi"
   override protected val applicationName: Option[String] = Some("Stack")
-  val implementation = new StackApiImpl();
+  val implementation = new StackDao();
 
   before() {
     contentType = formats("json")
@@ -51,14 +51,10 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
   )
 
   post("/stack/",operation(createStackOperation)) {
-
-
-
-
     val body = bodyParam[Stack]("body").description("")
     
     println("body: " + body)
-  
+    NotImplemented
   }
 
   
@@ -96,7 +92,7 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
 
     
     println("stackId: " + stackId)
-  
+    NotImplemented
   }
 
   
@@ -115,7 +111,7 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
 
     
     println("stackId: " + stackId)
-  
+    NotImplemented
   }
 
 }
