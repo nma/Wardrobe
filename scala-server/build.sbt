@@ -42,7 +42,8 @@ libraryDependencies ++= Seq(
   "org.eclipse.jetty.orbit"  % "javax.servlet"                  % "3.0.0.v201112011016" % "container;compile;provided;test" artifacts (Artifact("javax.servlet", "jar", "jar")),
   "org.jongo"                % "jongo"                          % "1.2",
   "com.amazonaws" % "aws-java-sdk" % "1.10.67",
-  "org.apache.httpcomponents" % "httpclient" % "4.5.2"
+  "org.apache.httpcomponents" % "httpclient" % "4.5.2",
+  "com.google.inject" % "guice" % "3.0"
 )
 
 resolvers += "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository"
