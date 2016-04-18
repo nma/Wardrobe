@@ -35,6 +35,7 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
 
   get("/stack/", operation(getStackOperation)) {
     println("get all stacks")
+    // implementation.retrieveStacks()
 
     val stack = new Stack(
       1,
@@ -42,6 +43,7 @@ class StackApi (implicit val swagger: Swagger) extends ScalatraServlet
       "admin",
       List[Shelf]()
     )
+
     List[Stack](stack)
   }
 

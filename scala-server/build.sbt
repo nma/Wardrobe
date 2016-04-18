@@ -43,7 +43,8 @@ libraryDependencies ++= Seq(
   "org.jongo"                % "jongo"                          % "1.2",
   "com.amazonaws" % "aws-java-sdk" % "1.10.67",
   "org.apache.httpcomponents" % "httpclient" % "4.5.2",
-  "com.google.inject" % "guice" % "3.0"
+  "com.google.inject" % "guice" % "3.0",
+  "org.mongodb" % "mongo-java-driver" % "3.2.2"
 )
 
 resolvers += "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository"

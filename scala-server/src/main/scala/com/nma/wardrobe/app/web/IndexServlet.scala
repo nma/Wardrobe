@@ -16,4 +16,11 @@ with ScalateSupport {
     layoutTemplate("/index.ssp")
   }
 
+  get("/stacks")
+  {
+    contentType = "text/html"
+
+    layoutTemplate("/stacks.ssp")
+  }
+
 }
