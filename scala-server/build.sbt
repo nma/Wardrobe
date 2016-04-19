@@ -44,6 +44,7 @@ libraryDependencies ++= Seq(
   "com.amazonaws" % "aws-java-sdk" % "1.10.67",
   "org.apache.httpcomponents" % "httpclient" % "4.5.2",
   "com.google.inject" % "guice" % "3.0",
+  "com.github.fakemongo" % "fongo" % "2.0.6",
   "org.mongodb" % "mongo-java-driver" % "3.2.2"
 )
 

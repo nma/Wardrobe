@@ -17,7 +17,9 @@ class StackDaoTest extends FunSuite with BeforeAndAfterEach {
 
   test("testRetrieveStacks") {
     val testStackDao = new StackDao();
-    testStackDao.retrieveStacks();
+    val stacks = testStackDao.retrieveStacks();
+
+    stacks
   }
 
   test("testRetrieveStackById") {
