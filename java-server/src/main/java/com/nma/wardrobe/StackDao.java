@@ -4,9 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import com.mongodb.client.MongoDatabase;
-import com.nma.wardrobe.app.model.Shelf;
-import com.nma.wardrobe.app.model.Stack;
+import io.swagger.model.Stack;
 import org.jongo.Jongo;
 import org.jongo.MongoCollection;
 

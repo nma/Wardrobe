@@ -8,7 +8,7 @@
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
     <init-param>
       <param-name>com.sun.jersey.config.property.packages</param-name>
-      <param-value>io.swagger.jaxrs.json;io.swagger.jaxrs.listing;io.swagger.api</param-value>
+      <param-value>io.swagger.jaxrs.json;io.swagger.sample.resource;io.swagger.jaxrs.listing</param-value>
     </init-param>
     <init-param>
       <param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>
@@ -18,8 +18,16 @@
       <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
       <param-value>true</param-value>
     </init-param>
+    <init-param>
+      <param-name>com.sun.jersey.config.feature.DisableWADL</param-name>
+      <param-value>true</param-value>
+    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>jersey</servlet-name>
+    <url-pattern>/v1/*</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>DefaultJaxrsConfig</servlet-name>
@@ -43,19 +51,20 @@
     <servlet-name>index</servlet-name>
     <jsp-file>/index.jsp</jsp-file>
   </servlet>
-
   <servlet-mapping>
     <servlet-name>index</servlet-name>
     <url-pattern>/index.jsp</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>jersey</servlet-name>
-    <url-pattern>/v1/*</url-pattern>
-  </servlet-mapping>
+
   <filter>
     <filter-name>ApiOriginFilter</filter-name>
     <filter-class>io.swagger.api.ApiOriginFilter</filter-class>
   </filter>
+  <servlet>
+    <servlet-name>Bootstrap</servlet-name>
+    <servlet-class>io.swagger.api.Bootstrap</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
   <filter-mapping>
     <filter-name>ApiOriginFilter</filter-name>
     <url-pattern>/*</url-pattern>

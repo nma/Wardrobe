@@ -1,7 +1,5 @@
 package com.nma.wardrobe;
 
-import javax.inject.Inject;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -24,10 +22,8 @@ public class S3BucketList {
 
     private static AmazonS3Client s3Client;
 
-    @Inject
     public S3BucketList(AWSCredentialsProvider provider) {
-
-
+        this.s3Client = new AmazonS3Client(provider);
     }
 
     public void enableVersioningOnBucket(String bucketName) {
