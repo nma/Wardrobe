@@ -8,7 +8,7 @@
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
     <init-param>
       <param-name>com.sun.jersey.config.property.packages</param-name>
-      <param-value>io.swagger.jaxrs.json;io.swagger.api;io.swagger.jaxrs.listing</param-value>
+      <param-value>io.swagger.jaxrs.json;io.swagger.jaxrs.listing;io.swagger.api</param-value>
     </init-param>
     <init-param>
       <param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>
