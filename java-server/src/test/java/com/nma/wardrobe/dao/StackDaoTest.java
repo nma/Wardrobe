@@ -25,8 +25,7 @@ public class StackDaoTest {
     @BeforeMethod
     public void setUp() throws Exception {
         if (jongoDriver == null) {
-            Fongo fongo = new Fongo("wardrobe");
-            DB db = fongo.getDB(WARDROBE);
+            DB db = new Fongo("test").getDB(WARDROBE);
             jongoDriver = new Jongo(db);
         }
     }
@@ -39,9 +38,7 @@ public class StackDaoTest {
     @Test
     public void testThatOurStackCanBeSaved() {
         StackDao dao = new StackDao(jongoDriver);
-        Stack stack = new Stack();
-        stack.setId(1);
-        stack.setName("w3m");
+        Stack stack = TestFactory.createStack("bob");
 
         assertThat(dao.retrieveStacks().size(), equalTo(0));
         dao.save(stack);
@@ -50,6 +47,8 @@ public class StackDaoTest {
 
     @Test
     public void testThatWeCanRetrieveStacksByID() {
+        Stack expectedStack = TestFactory.createStack("w3m");
+        
         StackDao dao = new StackDao(jongoDriver);
         Stack gotStack = dao.retrieveStackById("w3m");
         assertThat(gotStack, notNullValue());

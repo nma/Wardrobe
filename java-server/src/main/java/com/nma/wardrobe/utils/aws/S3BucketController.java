@@ -16,14 +16,20 @@ import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.VersionListing;
 
 /**
- * Created by nickma on 2016-04-09.
+ * Utility for communicating with S3 buckets.
+ *
+ * Created by nickma on 2016-04-09
  */
-public class S3BucketList {
+public class S3BucketController {
 
     private static AmazonS3Client s3Client;
 
-    public S3BucketList(AWSCredentialsProvider provider) {
+    public S3BucketController(AWSCredentialsProvider provider) {
         this.s3Client = new AmazonS3Client(provider);
+    }
+
+    public void createNewBucket() {
+
     }
 
     public void enableVersioningOnBucket(String bucketName) {

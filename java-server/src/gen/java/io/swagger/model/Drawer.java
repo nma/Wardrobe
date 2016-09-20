@@ -12,10 +12,10 @@ import java.util.Date;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-03-31T01:56:49.084-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
 public class Drawer   {
   
-  private Integer id = null;
+  private String id = null;
   private Date dateAdded = null;
   private Promoter promoter = null;
 
@@ -25,10 +25,10 @@ public class Drawer   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("id")
-  public Integer getId() {
+  public String getId() {
     return id;
   }
-  public void setId(Integer id) {
+  public void setId(String id) {
     this.id = id;
   }
 

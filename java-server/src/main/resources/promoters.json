@@ -1,9 +1,0 @@
-{
-  "resources": {
-    "contactship": "s3://maluuba-dev-deployment/vpa2.0/dev/2.0.0/contactship.war",
-    "dialogue": "s3://maluuba-deployment/automated/dev/dialogue-drivemode/dialogue.war",
-    "delegate": "s3://maluuba-deployment/automated/dev/delegate/delegate.war",
-    "nlp-ko": "s3://maluuba-deployment/automated/prod/ko-lg-dialogue/2.0-SNAPSHOT/nlp.war",
-    "templatation": "s3://maluuba-deployment/automated/dev/infrastructure/templatation.war"
-  }
-}

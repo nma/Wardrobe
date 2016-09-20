@@ -1,10 +1,15 @@
 package com.nma.wardrobe;
 
-/**
- * @author Nick Ma (nick.ma@maluuba.com)
- *
- * The guice modules that the app requires to setup our services
- */
-public class WardrobeModule {
+import com.google.inject.AbstractModule;
 
+/**
+ * The guice modules that the app requires to setup our services
+ *
+ * @author Nick Ma (nick.ma@maluuba.com)
+ */
+public class WardrobeModule extends AbstractModule {
+
+    @Override protected void configure() {
+
+    }
 }

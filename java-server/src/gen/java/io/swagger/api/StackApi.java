@@ -27,7 +27,7 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the stack API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-03-31T01:56:49.084-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
 public class StackApi  {
    private final StackApiService delegate = StackApiServiceFactory.getStackApi();
 
@@ -35,13 +35,9 @@ public class StackApi  {
     @Path("/")
     
     @Produces({ "application/xml", "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Get stacks", notes = ".", response = Stack.class, tags={ "stack",  })
+    @io.swagger.annotations.ApiOperation(value = "Get stacks", notes = ".", response = Stack.class, responseContainer = "List", tags={ "stack",  })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Stack.class),
-        
-        @io.swagger.annotations.ApiResponse(code = 400, message = "Invalid ID supplied", response = Stack.class),
-        
-        @io.swagger.annotations.ApiResponse(code = 404, message = "stack not found", response = Stack.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Stack.class, responseContainer = "List") })
 
     public Response getStacks(@Context SecurityContext securityContext)
     throws NotFoundException {

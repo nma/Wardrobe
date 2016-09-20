@@ -13,10 +13,10 @@ import java.util.*;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-03-31T01:56:49.084-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
 public class Shelf   {
   
-  private Long id = null;
+  private String id = null;
   private String name = null;
   private String url = null;
   private List<Promoter> promoters = new ArrayList<Promoter>();
@@ -29,10 +29,10 @@ public class Shelf   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("id")
-  public Long getId() {
+  public String getId() {
     return id;
   }
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

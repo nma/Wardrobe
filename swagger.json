@@ -737,8 +737,7 @@
       "type" : "object",
       "properties" : {
         "id" : {
-          "type" : "integer",
-          "format" : "int32"
+          "type" : "string"
         },
         "name" : {
           "type" : "string"
@@ -761,8 +760,7 @@
       "type" : "object",
       "properties" : {
         "id" : {
-          "type" : "integer",
-          "format" : "int32"
+          "type" : "string"
         },
         "dateAdded" : {
           "type" : "string",
@@ -780,8 +778,7 @@
       "type" : "object",
       "properties" : {
         "id" : {
-          "type" : "integer",
-          "format" : "int64"
+          "type" : "string"
         },
         "name" : {
           "type" : "string"
@@ -813,8 +810,7 @@
       "type" : "object",
       "properties" : {
         "id" : {
-          "type" : "integer",
-          "format" : "int64"
+          "type" : "string"
         },
         "name" : {
           "type" : "string"
@@ -831,8 +827,7 @@
       "type" : "object",
       "properties" : {
         "id" : {
-          "type" : "integer",
-          "format" : "int64"
+          "type" : "string"
         },
         "firstName" : {
           "type" : "string"
