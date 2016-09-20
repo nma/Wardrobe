@@ -48,7 +48,6 @@ public class StackDaoTest {
     @Test
     public void testThatWeCanRetrieveStacksByID() {
         Stack expectedStack = TestFactory.createStack("w3m");
-        
         StackDao dao = new StackDao(jongoDriver);
         Stack gotStack = dao.retrieveStackById("w3m");
         assertThat(gotStack, notNullValue());
