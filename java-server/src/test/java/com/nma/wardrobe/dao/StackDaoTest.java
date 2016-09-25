@@ -2,54 +2,74 @@ package com.nma.wardrobe.dao;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
-import org.jongo.Jongo;
+import com.google.inject.Inject;
+import io.swagger.model.Shelf;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
-
-import com.github.fakemongo.Fongo;
-import com.mongodb.DB;
 
 import io.swagger.model.Stack;
 
 /**
  * @author Nick Ma (nick.ma@maluuba.com)
  */
+@Guice(modules = WardrobeTestModule.class)
 public class StackDaoTest {
 
-    private final static String WARDROBE = "wardrobe_data";
-    private Jongo jongoDriver = null;
+    @Inject
+    StackDao dao;
 
-    @BeforeMethod
-    public void setUp() throws Exception {
-        if (jongoDriver == null) {
-            DB db = new Fongo("test").getDB(WARDROBE);
-            jongoDriver = new Jongo(db);
-        }
-    }
+    @Inject
+    ShelfToStackDao lookUpDao;
+
+    @Inject
+    ShelfDao shelfDao;
 
     @AfterMethod
-    public void tearDown() throws Exception {
-        jongoDriver.getDatabase().dropDatabase();
+    public void tearDown() {
+        dao.dropCollection();
     }
 
     @Test
-    public void testThatOurStackCanBeSaved() {
-        StackDao dao = new StackDao(jongoDriver);
+    public void testThatOurStackCanBeSavedAndUpdated() {
         Stack stack = TestFactory.createStack("bob");
 
         assertThat(dao.retrieveStacks().size(), equalTo(0));
         dao.save(stack);
         assertThat(dao.retrieveStacks().size(), equalTo(1));
+
+        stack.setAuthGroup("duck");
+        dao.save(stack);
+        assertThat(dao.count(), equalTo(1l));
     }
 
     @Test
-    public void testThatWeCanRetrieveStacksByID() {
-        Stack expectedStack = TestFactory.createStack("w3m");
-        StackDao dao = new StackDao(jongoDriver);
-        Stack gotStack = dao.retrieveStackById("w3m");
+    public void testThatWeCanRetrieveStacksByIDAndName() throws DaoExceptions.NoMatchFound {
+        Stack expectedStack = TestFactory.createStack("W3M");
+
+        dao.save(expectedStack);
+        assertThat(dao.retrieveStacks().size(), equalTo(1));
+
+        Stack gotStack = dao.retrieveStackByID("w3m");
         assertThat(gotStack, notNullValue());
+
+        Stack gotStackAgain = dao.retrieveStackByName("W3M");
+        assertThat(gotStackAgain, notNullValue());
+
+        assertEquals(gotStack, gotStackAgain);
     }
+
+    @Test(expectedExceptions = DaoExceptions.NoMatchFound.class)
+    public void testNoMatchFound() throws DaoExceptions.NoMatchFound {
+        dao.retrieveStackByID("fail");
+    }
+
+    public void testRetrieveShelves() {
+        Stack expectedStack = TestFactory.createStack("testStack");
+
+    }
+
 }

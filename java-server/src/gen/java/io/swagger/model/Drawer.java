@@ -22,7 +22,7 @@ public class Drawer   {
   
   /**
    **/
-  
+
   @ApiModelProperty(value = "")
   @JsonProperty("id")
   public String getId() {

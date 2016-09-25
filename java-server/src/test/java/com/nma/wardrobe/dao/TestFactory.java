@@ -1,6 +1,8 @@
 package com.nma.wardrobe.dao;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.UUID;
 
 import io.swagger.model.Drawer;
@@ -15,21 +17,29 @@ import io.swagger.model.Stack;
 public class TestFactory {
     public static Stack createStack(String stackName) {
         Stack stack = new Stack();
-        stack.setId(UUID.randomUUID().toString());
-        stack.setName("test-stack");
+        stack.setId(stackName.toLowerCase());
+        stack.setName(stackName);
 
         return stack;
     }
 
+    public static List<Shelf> createShelves(int count, String prefix) {
+        List<Shelf> shelves = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            shelves.add(createShelf(prefix + "_" + count));
+        }
+        return shelves;
+    }
+
     public static Shelf createShelf(String serviceName) {
         Shelf shelf = new Shelf();
-        shelf.setId(UUID.randomUUID().toString());
+        shelf.setId(serviceName.toLowerCase());
         shelf.setName(serviceName);
 
         return shelf;
     }
 
-    public static Drawer createDrawer(String serviceName) {
+    public static Drawer createDrawer() {
         Drawer drawer = new Drawer();
         drawer.setId(UUID.randomUUID().toString());
         drawer.setDateAdded(Calendar.getInstance().getTime());
