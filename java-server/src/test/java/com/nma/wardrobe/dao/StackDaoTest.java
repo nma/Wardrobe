@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import com.google.inject.Inject;
-import io.swagger.model.Shelf;
+import com.nma.wardrobe.WardrobeTestModule;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
@@ -14,19 +14,13 @@ import org.testng.annotations.Test;
 import io.swagger.model.Stack;
 
 /**
- * @author Nick Ma (nick.ma@maluuba.com)
+ * @author Nick Ma (nickma38@gmail.com)
  */
 @Guice(modules = WardrobeTestModule.class)
 public class StackDaoTest {
 
     @Inject
     StackDao dao;
-
-    @Inject
-    ShelfToStackDao lookUpDao;
-
-    @Inject
-    ShelfDao shelfDao;
 
     @AfterMethod
     public void tearDown() {
@@ -65,11 +59,6 @@ public class StackDaoTest {
     @Test(expectedExceptions = DaoExceptions.NoMatchFound.class)
     public void testNoMatchFound() throws DaoExceptions.NoMatchFound {
         dao.retrieveStackByID("fail");
-    }
-
-    public void testRetrieveShelves() {
-        Stack expectedStack = TestFactory.createStack("testStack");
-
     }
 
 }

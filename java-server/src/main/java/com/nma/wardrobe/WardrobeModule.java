@@ -9,7 +9,7 @@ import org.jongo.Jongo;
 /**
  * The guice modules that the app requires to setup our services
  *
- * @author Nick Ma (nick.ma@maluuba.com)
+ * @author Nick Ma (nickma38@gmail.com)
  */
 public class WardrobeModule extends AbstractModule {
 

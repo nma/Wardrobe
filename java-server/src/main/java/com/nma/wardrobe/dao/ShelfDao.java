@@ -3,9 +3,7 @@ package com.nma.wardrobe.dao;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.mongodb.BasicDBObject;
 import io.swagger.model.Shelf;
-import org.jongo.FindOne;
 import org.jongo.Jongo;
 import org.jongo.MongoCollection;
 
@@ -13,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by nickma on 2016-04-14.
+ * @author Nick Ma (nickma38@gmail.com)
  */
 @Singleton
 public class ShelfDao {
@@ -39,14 +37,7 @@ public class ShelfDao {
     }
 
     public void save(Shelf shelf) {
-        BasicDBObject findQuery = new BasicDBObject("id", shelf.getId());
-        FindOne findOne = this.mongoCollection.findOne(findQuery.toString());
-        Shelf foundShelf = findOne.as(Shelf.class);
-        if (foundShelf != null) {
-            this.mongoCollection.update(findQuery.toString()).with(shelf);
-        } else {
-            this.mongoCollection.save(shelf);
-        }
+        QueryBuilder.upsert(mongoCollection, "id", shelf.getId(), shelf, Shelf.class);
     }
 
     public List<Shelf> retrieveShelves() {
@@ -59,5 +50,13 @@ public class ShelfDao {
 
     public Long count() {
         return mongoCollection.count();
+    }
+
+    public Shelf retrieveShelfbyID(String id) throws DaoExceptions.NoMatchFound {
+        return QueryBuilder.find(mongoCollection, "id", id, Shelf.class);
+    }
+
+    public Shelf retrieveShelfByName(String name) throws DaoExceptions.NoMatchFound {
+        return QueryBuilder.find(mongoCollection, "name", name, Shelf.class);
     }
 }

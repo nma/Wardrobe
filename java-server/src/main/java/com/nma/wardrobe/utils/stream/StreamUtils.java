@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
- * Created by nma on 24/09/16.
+ * @author Nick Ma (nickma38@gmail.com)
  */
 public class StreamUtils {
 

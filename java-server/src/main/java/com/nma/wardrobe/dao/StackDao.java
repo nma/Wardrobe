@@ -2,14 +2,10 @@ package com.nma.wardrobe.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.mongodb.BasicDBObject;
-import com.nma.wardrobe.utils.stream.StreamUtils;
-import org.jongo.FindOne;
 import org.jongo.Jongo;
 import org.jongo.MongoCollection;
 
@@ -18,7 +14,7 @@ import io.swagger.model.Stack;
 /**
  * Data Object for coordinating state changes in Mongo.
  *
- * Created by nickma on 2016-04-14.
+ * @author Nick Ma (nickma38@gmail.com)
  */
 @Singleton
 public class StackDao {
@@ -47,27 +43,11 @@ public class StackDao {
     }
 
     public Stack retrieveStackByID(String id) throws DaoExceptions.NoMatchFound {
-        BasicDBObject findQuery = new BasicDBObject("id", id);
-        Iterable<Stack> iter = mongoCollection.find(findQuery.toString()).as(Stack.class);
-        Optional<Stack> optional = StreamUtils.asStream(iter)
-                .findFirst();
-        if (optional.isPresent()) {
-            return optional.get();
-        } else {
-            throw new DaoExceptions.NoMatchFound(
-                    String.format("No items with id {} found in collection {}", id, STACK_COLLECTION));
-        }
+        return QueryBuilder.find(mongoCollection, "id", id, Stack.class);
     }
 
     public void save(Stack stack) {
-        BasicDBObject findQuery = new BasicDBObject("id", stack.getId());
-        FindOne findOne = this.mongoCollection.findOne(findQuery.toString());
-        Stack foundStack = findOne.as(Stack.class);
-        if (foundStack != null) {
-            this.mongoCollection.update(findQuery.toString()).with(stack);
-        } else {
-            this.mongoCollection.save(stack);
-        }
+        QueryBuilder.upsert(mongoCollection, "id", stack.getId(), stack, Stack.class);
     }
 
     @VisibleForTesting
@@ -76,16 +56,7 @@ public class StackDao {
     }
 
     public Stack retrieveStackByName(String name) throws DaoExceptions.NoMatchFound {
-        BasicDBObject findQuery = new BasicDBObject("name", name);
-        Iterable<Stack> iter = mongoCollection.find(findQuery.toString()).as(Stack.class);
-        Optional<Stack> optional = StreamUtils.asStream(iter)
-                .findFirst();
-        if (optional.isPresent()) {
-            return optional.get();
-        } else {
-            throw new DaoExceptions.NoMatchFound(
-                    String.format("No items with id {} found in collection {}", name, STACK_COLLECTION));
-        }
+        return QueryBuilder.find(mongoCollection, "name", name, Stack.class);
     }
 
     public long count() {

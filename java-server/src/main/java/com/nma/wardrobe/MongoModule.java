@@ -3,13 +3,12 @@ package com.nma.wardrobe;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.mongodb.DB;
-import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 
 import java.net.UnknownHostException;
 
 /**
- * Created by nma on 24/09/16.
+ * @author Nick Ma (nickma38@gmail.com)
  */
 public class MongoModule extends AbstractModule{
     @Override

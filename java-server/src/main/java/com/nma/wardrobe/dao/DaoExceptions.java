@@ -1,7 +1,7 @@
 package com.nma.wardrobe.dao;
 
 /**
- * Created by nma on 25/09/16.
+ * @author Nick Ma (nickma38@gmail.com)
  */
 public class DaoExceptions {
     public static class NoMatchFound extends Exception {

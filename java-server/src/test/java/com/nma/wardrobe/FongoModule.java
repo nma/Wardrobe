@@ -1,4 +1,4 @@
-package com.nma.wardrobe.dao;
+package com.nma.wardrobe;
 
 import com.github.fakemongo.Fongo;
 import com.google.inject.AbstractModule;
@@ -8,7 +8,7 @@ import com.mongodb.DB;
 import java.net.UnknownHostException;
 
 /**
- * Created by nma on 24/09/16.
+ * @author Nick Ma (nickma38@gmail.com)
  */
 public class FongoModule extends AbstractModule{
     @Override

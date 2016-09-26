@@ -1,16 +1,19 @@
 package com.nma.wardrobe.dao;
 
 import com.google.inject.Inject;
+import com.nma.wardrobe.WardrobeTestModule;
 import io.swagger.model.Shelf;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
 
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
- * @author Nick Ma (nick.ma@maluuba.com)
+ * @author Nick Ma (nickma38@gmail.com)
  */
 @Guice(modules = WardrobeTestModule.class)
 public class ShelfDaoTest {
@@ -37,7 +40,23 @@ public class ShelfDaoTest {
     }
 
     @Test
-    public void testRetrieveByNameAndID() {
+    public void testRetrieveByNameAndID() throws DaoExceptions.NoMatchFound {
+        Shelf expectedShelf = TestFactory.createShelf("serviceA");
 
+        dao.save(expectedShelf);
+        assertThat(dao.retrieveShelves().size(), equalTo(1));
+
+        Shelf gotShelf = dao.retrieveShelfbyID("servicea");
+        assertThat(gotShelf, notNullValue());
+
+        Shelf gotShelfAgain = dao.retrieveShelfByName("serviceA");
+        assertThat(gotShelfAgain, notNullValue());
+
+        assertEquals(gotShelf, gotShelfAgain);
+    }
+
+    @Test(expectedExceptions = DaoExceptions.NoMatchFound.class)
+    public void testNoMatchFound() throws DaoExceptions.NoMatchFound {
+        dao.retrieveShelfbyID("fail");
     }
 }

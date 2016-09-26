@@ -12,7 +12,7 @@ import io.swagger.model.Stack;
 /**
  * Creates a bundle of objects for testing;
  *
- * @author Nick Ma (nick.ma@maluuba.com)
+ * @author Nick Ma (nickma38@gmail.com)
  */
 public class TestFactory {
     public static Stack createStack(String stackName) {

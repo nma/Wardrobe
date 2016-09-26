@@ -1,10 +1,10 @@
-package com.nma.wardrobe.dao;
+package com.nma.wardrobe;
 
 import com.google.inject.AbstractModule;
 import com.nma.wardrobe.WardrobeModule;
 
 /**
- * Created by nma on 24/09/16.
+ * @author Nick Ma (nickma38@gmail.com)
  */
 public class WardrobeTestModule extends AbstractModule{
     @Override
