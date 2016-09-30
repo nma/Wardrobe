@@ -152,9 +152,7 @@
                 <resource>
                   <directory>${project.build.directory}/swagger-ui-master/dist</directory>
                   <filtering>true</filtering>
-                  <!--excludes>
-                    <exclude>index.html</exclude>
-                  </excludes-->
+                  <exclude>index.html</exclude>
                 </resource>
               </resources>
             </configuration>
