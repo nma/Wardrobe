@@ -27,7 +27,7 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the shelf API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
 public class ShelfApi  {
    private final ShelfApiService delegate = ShelfApiServiceFactory.getShelfApi();
 
@@ -91,7 +91,7 @@ public class ShelfApi  {
     @Path("/{shelfId}/promote/{promoterId}")
     
     @Produces({ "application/xml", "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Find shelf by ID", notes = "Returns a single shelf", response = Void.class, tags={ "shelf",  })
+    @io.swagger.annotations.ApiOperation(value = "Find shelf by ID", notes = "Adds a new revision defined by the promoter", response = Void.class, tags={ "shelf",  })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 400, message = "Invalid ID supplied", response = Void.class) })
 
@@ -100,15 +100,15 @@ public class ShelfApi  {
         return delegate.promoteDrawerId(shelfId,promoterId,securityContext);
     }
     @GET
-    @Path("/{shelfId}/rollback/{drawerId}")
+    @Path("/{shelfId}/rollback/{revisionId}")
     
     @Produces({ "application/xml", "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Find shelf by ID", notes = "Returns a single shelf", response = Void.class, tags={ "shelf" })
+    @io.swagger.annotations.ApiOperation(value = "Find shelf by ID", notes = "Sets the file to another version", response = Void.class, tags={ "shelf" })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 400, message = "Invalid ID supplied", response = Void.class) })
 
-    public Response rollbackToDrawerId(@ApiParam(value = "ID of shelf to rollback",required=true) @PathParam("shelfId") Long shelfId,@ApiParam(value = "ID of drawer to rollback to",required=true) @PathParam("drawerId") Long drawerId,@Context SecurityContext securityContext)
+    public Response rollbackToDrawerId(@ApiParam(value = "ID of shelf to rollback",required=true) @PathParam("shelfId") Long shelfId,@ApiParam(value = "ID of revision to rollback to",required=true) @PathParam("revisionId") Long revisionId,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.rollbackToDrawerId(shelfId,drawerId,securityContext);
+        return delegate.rollbackToDrawerId(shelfId,revisionId,securityContext);
     }
 }

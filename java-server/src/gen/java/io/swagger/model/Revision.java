@@ -5,17 +5,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 
 
 
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
-public class Promoter   {
+public class Revision   {
   
-  private Long id = null;
-  private String name = null;
-  private String address = null;
+  private Integer id = null;
+  private Date dateAdded = null;
 
   
   /**
@@ -23,10 +23,10 @@ public class Promoter   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("id")
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
-  public void setId(Long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
@@ -35,25 +35,12 @@ public class Promoter   {
    **/
   
   @ApiModelProperty(value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
+  @JsonProperty("dateAdded")
+  public Date getDateAdded() {
+    return dateAdded;
   }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   **/
-  
-  @ApiModelProperty(value = "")
-  @JsonProperty("address")
-  public String getAddress() {
-    return address;
-  }
-  public void setAddress(String address) {
-    this.address = address;
+  public void setDateAdded(Date dateAdded) {
+    this.dateAdded = dateAdded;
   }
 
   
@@ -66,25 +53,23 @@ public class Promoter   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Promoter promoter = (Promoter) o;
-    return Objects.equals(id, promoter.id) &&
-        Objects.equals(name, promoter.name) &&
-        Objects.equals(address, promoter.address);
+    Revision revision = (Revision) o;
+    return Objects.equals(id, revision.id) &&
+        Objects.equals(dateAdded, revision.dateAdded);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address);
+    return Objects.hash(id, dateAdded);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Promoter {\n");
+    sb.append("class Revision {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    dateAdded: ").append(toIndentedString(dateAdded)).append("\n");
     sb.append("}");
     return sb.toString();
   }

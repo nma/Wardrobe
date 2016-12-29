@@ -10,10 +10,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
 public class User   {
   
-  private String id = null;
+  private Long id = null;
   private String firstName = null;
   private String lastName = null;
   private String email = null;
@@ -46,10 +46,10 @@ public class User   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("id")
-  public String getId() {
+  public Long getId() {
     return id;
   }
-  public void setId(String id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

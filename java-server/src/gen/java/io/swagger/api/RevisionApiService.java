@@ -5,7 +5,7 @@ import io.swagger.model.*;
 
 import com.sun.jersey.multipart.FormDataParam;
 
-import io.swagger.model.Stack;
+import io.swagger.model.Revision;
 
 import java.util.List;
 import io.swagger.api.NotFoundException;
@@ -19,21 +19,18 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
-public abstract class StackApiService {
+public abstract class RevisionApiService {
   
-      public abstract Response getStacks(SecurityContext securityContext)
+      public abstract Response createRevision(Revision body,SecurityContext securityContext)
       throws NotFoundException;
   
-      public abstract Response createStack(Stack body,SecurityContext securityContext)
+      public abstract Response revisionRevisionIdGet(Long revisionId,SecurityContext securityContext)
       throws NotFoundException;
   
-      public abstract Response stackStackIdGet(Long stackId,SecurityContext securityContext)
+      public abstract Response revisionRevisionIdPut(Long revisionId,Revision body,SecurityContext securityContext)
       throws NotFoundException;
   
-      public abstract Response stackStackIdPut(Long stackId,SecurityContext securityContext)
-      throws NotFoundException;
-  
-      public abstract Response stackStackIdDelete(Long stackId,SecurityContext securityContext)
+      public abstract Response revisionRevisionIdDelete(Long revisionId,SecurityContext securityContext)
       throws NotFoundException;
   
 }

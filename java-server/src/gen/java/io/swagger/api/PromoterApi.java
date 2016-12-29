@@ -8,7 +8,6 @@ import io.swagger.annotations.ApiParam;
 
 import com.sun.jersey.multipart.FormDataParam;
 
-import io.swagger.model.Drawer;
 import io.swagger.model.Promoter;
 
 import java.util.List;
@@ -28,7 +27,7 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the promoter API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
 public class PromoterApi  {
    private final PromoterApiService delegate = PromoterApiServiceFactory.getPromoterApi();
 
@@ -36,11 +35,11 @@ public class PromoterApi  {
     
     @Consumes({ "application/xml", "application/json" })
     @Produces({ "application/xml", "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Create drawer", notes = ".", response = Void.class, tags={ "shelf",  })
+    @io.swagger.annotations.ApiOperation(value = "Create promoter", notes = "Creates a promoter object", response = Void.class, tags={ "shelf",  })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 405, message = "Invalid input", response = Void.class) })
 
-    public Response createPromoter(@ApiParam(value = "Drawer object that needs to be added to a shelf" ,required=true) Drawer body,@Context SecurityContext securityContext)
+    public Response createPromoter(@ApiParam(value = "Drawer object that needs to be added to a shelf" ,required=true) Promoter body,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.createPromoter(body,securityContext);
     }

@@ -5,7 +5,6 @@ import io.swagger.model.*;
 
 import com.sun.jersey.multipart.FormDataParam;
 
-import io.swagger.model.Drawer;
 import io.swagger.model.Promoter;
 
 import java.util.List;
@@ -19,10 +18,10 @@ import com.sun.jersey.multipart.FormDataParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
 public abstract class PromoterApiService {
   
-      public abstract Response createPromoter(Drawer body,SecurityContext securityContext)
+      public abstract Response createPromoter(Promoter body,SecurityContext securityContext)
       throws NotFoundException;
   
       public abstract Response promoterPromoterIdGet(Long promoterId,SecurityContext securityContext)

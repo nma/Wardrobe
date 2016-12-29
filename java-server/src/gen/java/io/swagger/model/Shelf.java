@@ -5,23 +5,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.Drawer;
 import io.swagger.model.Promoter;
+import io.swagger.model.Revision;
 import java.util.*;
 
 
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
 public class Shelf   {
   
-  private String id = null;
+  private Long id = null;
   private String name = null;
   private String url = null;
   private List<Promoter> promoters = new ArrayList<Promoter>();
-  private List<Drawer> drawers = new ArrayList<Drawer>();
-  private Drawer latest = null;
+  private List<Revision> revisions = new ArrayList<Revision>();
+  private Revision latest = null;
 
   
   /**
@@ -29,10 +29,10 @@ public class Shelf   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("id")
-  public String getId() {
+  public Long getId() {
     return id;
   }
-  public void setId(String id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -80,12 +80,12 @@ public class Shelf   {
    **/
   
   @ApiModelProperty(value = "")
-  @JsonProperty("drawers")
-  public List<Drawer> getDrawers() {
-    return drawers;
+  @JsonProperty("revisions")
+  public List<Revision> getRevisions() {
+    return revisions;
   }
-  public void setDrawers(List<Drawer> drawers) {
-    this.drawers = drawers;
+  public void setRevisions(List<Revision> revisions) {
+    this.revisions = revisions;
   }
 
   
@@ -94,10 +94,10 @@ public class Shelf   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("latest")
-  public Drawer getLatest() {
+  public Revision getLatest() {
     return latest;
   }
-  public void setLatest(Drawer latest) {
+  public void setLatest(Revision latest) {
     this.latest = latest;
   }
 
@@ -116,13 +116,13 @@ public class Shelf   {
         Objects.equals(name, shelf.name) &&
         Objects.equals(url, shelf.url) &&
         Objects.equals(promoters, shelf.promoters) &&
-        Objects.equals(drawers, shelf.drawers) &&
+        Objects.equals(revisions, shelf.revisions) &&
         Objects.equals(latest, shelf.latest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, url, promoters, drawers, latest);
+    return Objects.hash(id, name, url, promoters, revisions, latest);
   }
 
   @Override
@@ -134,7 +134,7 @@ public class Shelf   {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    promoters: ").append(toIndentedString(promoters)).append("\n");
-    sb.append("    drawers: ").append(toIndentedString(drawers)).append("\n");
+    sb.append("    revisions: ").append(toIndentedString(revisions)).append("\n");
     sb.append("    latest: ").append(toIndentedString(latest)).append("\n");
     sb.append("}");
     return sb.toString();

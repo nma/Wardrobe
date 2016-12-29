@@ -18,7 +18,7 @@ import com.sun.jersey.multipart.FormDataParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
 public abstract class ShelfApiService {
   
       public abstract Response addShelf(Shelf body,SecurityContext securityContext)
@@ -36,7 +36,7 @@ public abstract class ShelfApiService {
       public abstract Response promoteDrawerId(Long shelfId,Long promoterId,SecurityContext securityContext)
       throws NotFoundException;
   
-      public abstract Response rollbackToDrawerId(Long shelfId,Long drawerId,SecurityContext securityContext)
+      public abstract Response rollbackToDrawerId(Long shelfId,Long revisionId,SecurityContext securityContext)
       throws NotFoundException;
   
 }

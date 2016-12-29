@@ -1,21 +1,21 @@
 package io.swagger.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.model.Shelf;
+import java.util.*;
 
 
 
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-09-19T22:43:03.842-04:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
 public class Stack   {
   
-  private String id = null;
+  private Integer id = null;
   private String name = null;
   private String authGroup = null;
   private List<Shelf> shelves = new ArrayList<Shelf>();
@@ -26,10 +26,10 @@ public class Stack   {
   
   @ApiModelProperty(value = "")
   @JsonProperty("id")
-  public String getId() {
+  public Integer getId() {
     return id;
   }
-  public void setId(String id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
