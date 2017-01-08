@@ -1,18 +1,20 @@
 package com.nma.wardrobe.dao;
 
-import com.google.inject.Inject;
-import com.nma.wardrobe.WardrobeTestModule;
-import io.swagger.model.Drawer;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Guice;
-import org.testng.annotations.Test;
-
-import java.util.Date;
-
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+
+import java.util.Date;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Guice;
+import org.testng.annotations.Test;
+
+import com.google.inject.Inject;
+import com.nma.wardrobe.WardrobeTestModule;
+
+import io.swagger.model.Drawer;
 
 /**
  * @author Nick Ma (nickma38@gmail.com)
@@ -39,7 +41,7 @@ public class DrawerDaoTest {
         drawer.setDateAdded(new Date());
         dao.save(drawer);
         assertThat(dao.count(), equalTo(1l));
-;    }
+    }
 
     @Test
     public void testRetrieveByDateAddedAndID() throws DaoExceptions.NoMatchFound {

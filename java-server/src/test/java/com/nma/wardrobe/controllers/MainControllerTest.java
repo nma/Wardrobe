@@ -1,15 +1,14 @@
 package com.nma.wardrobe.controllers;
 
+import org.testng.annotations.Guice;
+import org.testng.annotations.Test;
+
 import com.google.inject.Inject;
 import com.nma.wardrobe.WardrobeTestModule;
 import com.nma.wardrobe.dao.DrawerDao;
 import com.nma.wardrobe.dao.ShelfDao;
 import com.nma.wardrobe.dao.ShelfToStackDao;
 import com.nma.wardrobe.dao.StackDao;
-import org.testng.annotations.Guice;
-import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * @author Nick Ma (nickma38@gmail.com)
