@@ -47,7 +47,7 @@ public class StackDaoTest {
         dao.save(expectedStack);
         assertThat(dao.retrieveStacks().size(), equalTo(1));
 
-        Stack gotStack = dao.retrieveStackByID("w3m");
+        Stack gotStack = dao.retrieveStackByID(expectedStack.getId());
         assertThat(gotStack, notNullValue());
 
         Stack gotStackAgain = dao.retrieveStackByName("W3M");

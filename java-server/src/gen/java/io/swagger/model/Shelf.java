@@ -2,109 +2,161 @@ package io.swagger.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.model.Promoter;
 import io.swagger.model.Revision;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
 
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
+/**
+ * Shelf
+ */
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-01-08T01:47:19.572-05:00")
 public class Shelf   {
-  
-  private Long id = null;
+  @JsonProperty("id")
+  private String id = null;
+
+  @JsonProperty("name")
   private String name = null;
+
+  @JsonProperty("url")
   private String url = null;
+
+  @JsonProperty("promoters")
   private List<Promoter> promoters = new ArrayList<Promoter>();
+
+  @JsonProperty("revisions")
   private List<Revision> revisions = new ArrayList<Revision>();
+
+  @JsonProperty("latest")
   private Revision latest = null;
 
-  
-  /**
-   **/
-  
+  public Shelf id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
   @ApiModelProperty(value = "")
-  @JsonProperty("id")
-  public Long getId() {
+  public String getId() {
     return id;
   }
-  public void setId(Long id) {
+
+  public void setId(String id) {
     this.id = id;
   }
 
-  
-  /**
-   **/
-  
+  public Shelf name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
   @ApiModelProperty(value = "")
-  @JsonProperty("name")
   public String getName() {
     return name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
 
-  
-  /**
-   **/
-  
+  public Shelf url(String url) {
+    this.url = url;
+    return this;
+  }
+
+   /**
+   * Get url
+   * @return url
+  **/
   @ApiModelProperty(value = "")
-  @JsonProperty("url")
   public String getUrl() {
     return url;
   }
+
   public void setUrl(String url) {
     this.url = url;
   }
 
-  
-  /**
-   **/
-  
+  public Shelf promoters(List<Promoter> promoters) {
+    this.promoters = promoters;
+    return this;
+  }
+
+  public Shelf addPromotersItem(Promoter promotersItem) {
+    this.promoters.add(promotersItem);
+    return this;
+  }
+
+   /**
+   * Get promoters
+   * @return promoters
+  **/
   @ApiModelProperty(value = "")
-  @JsonProperty("promoters")
   public List<Promoter> getPromoters() {
     return promoters;
   }
+
   public void setPromoters(List<Promoter> promoters) {
     this.promoters = promoters;
   }
 
-  
-  /**
-   **/
-  
+  public Shelf revisions(List<Revision> revisions) {
+    this.revisions = revisions;
+    return this;
+  }
+
+  public Shelf addRevisionsItem(Revision revisionsItem) {
+    this.revisions.add(revisionsItem);
+    return this;
+  }
+
+   /**
+   * Get revisions
+   * @return revisions
+  **/
   @ApiModelProperty(value = "")
-  @JsonProperty("revisions")
   public List<Revision> getRevisions() {
     return revisions;
   }
+
   public void setRevisions(List<Revision> revisions) {
     this.revisions = revisions;
   }
 
-  
-  /**
-   **/
-  
+  public Shelf latest(Revision latest) {
+    this.latest = latest;
+    return this;
+  }
+
+   /**
+   * Get latest
+   * @return latest
+  **/
   @ApiModelProperty(value = "")
-  @JsonProperty("latest")
   public Revision getLatest() {
     return latest;
   }
+
   public void setLatest(Revision latest) {
     this.latest = latest;
   }
 
-  
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -112,12 +164,12 @@ public class Shelf   {
       return false;
     }
     Shelf shelf = (Shelf) o;
-    return Objects.equals(id, shelf.id) &&
-        Objects.equals(name, shelf.name) &&
-        Objects.equals(url, shelf.url) &&
-        Objects.equals(promoters, shelf.promoters) &&
-        Objects.equals(revisions, shelf.revisions) &&
-        Objects.equals(latest, shelf.latest);
+    return Objects.equals(this.id, shelf.id) &&
+        Objects.equals(this.name, shelf.name) &&
+        Objects.equals(this.url, shelf.url) &&
+        Objects.equals(this.promoters, shelf.promoters) &&
+        Objects.equals(this.revisions, shelf.revisions) &&
+        Objects.equals(this.latest, shelf.latest);
   }
 
   @Override
@@ -144,7 +196,7 @@ public class Shelf   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

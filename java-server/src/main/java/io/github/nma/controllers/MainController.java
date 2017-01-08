@@ -2,7 +2,6 @@ package io.github.nma.controllers;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import io.github.nma.dao.DrawerDao;
 import io.github.nma.dao.ShelfDao;
 import io.github.nma.dao.ShelfToStackDao;
 import io.github.nma.dao.StackDao;
@@ -17,16 +16,14 @@ import io.github.nma.dao.StackDao;
 @Singleton
 public class MainController {
 
-    private final DrawerDao drawerDao;
     private final StackDao stackDao;
     private final ShelfDao shelfDao;
     private final ShelfToStackDao shelfToStackDao;
 
     @Inject
-    public MainController(ShelfDao shelfDao, StackDao stackDao, DrawerDao drawerDao, ShelfToStackDao shelfToStackDao) {
+    public MainController(ShelfDao shelfDao, StackDao stackDao, ShelfToStackDao shelfToStackDao) {
         this.shelfDao = shelfDao;
         this.stackDao = stackDao;
-        this.drawerDao = drawerDao;
         this.shelfToStackDao = shelfToStackDao;
     }
 }

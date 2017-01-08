@@ -2,64 +2,84 @@ package io.swagger.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 
 
 
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2016-12-29T11:48:52.770-05:00")
+/**
+ * Promoter
+ */
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-01-08T01:47:19.572-05:00")
 public class Promoter   {
-  
-  private Long id = null;
+  @JsonProperty("id")
+  private Integer id = null;
+
+  @JsonProperty("name")
   private String name = null;
+
+  @JsonProperty("address")
   private String address = null;
 
-  
-  /**
-   **/
-  
+  public Promoter id(Integer id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
   @ApiModelProperty(value = "")
-  @JsonProperty("id")
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
-  public void setId(Long id) {
+
+  public void setId(Integer id) {
     this.id = id;
   }
 
-  
-  /**
-   **/
-  
+  public Promoter name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
   @ApiModelProperty(value = "")
-  @JsonProperty("name")
   public String getName() {
     return name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
 
-  
-  /**
-   **/
-  
+  public Promoter address(String address) {
+    this.address = address;
+    return this;
+  }
+
+   /**
+   * Get address
+   * @return address
+  **/
   @ApiModelProperty(value = "")
-  @JsonProperty("address")
   public String getAddress() {
     return address;
   }
+
   public void setAddress(String address) {
     this.address = address;
   }
 
-  
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -67,9 +87,9 @@ public class Promoter   {
       return false;
     }
     Promoter promoter = (Promoter) o;
-    return Objects.equals(id, promoter.id) &&
-        Objects.equals(name, promoter.name) &&
-        Objects.equals(address, promoter.address);
+    return Objects.equals(this.id, promoter.id) &&
+        Objects.equals(this.name, promoter.name) &&
+        Objects.equals(this.address, promoter.address);
   }
 
   @Override
@@ -93,7 +113,7 @@ public class Promoter   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

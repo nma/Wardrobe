@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: "1.0.1"
+  version: "1.0.2"
   title: Wardrobe
   description: Simple UI to promote .war files between S3 locations
   license:
@@ -642,8 +642,7 @@ definitions:
     type: "object"
     properties:
       id:
-        type: "integer"
-        format: "int32"
+        type: "string"
       name:
         type: "string"
       authGroup:
@@ -669,8 +668,7 @@ definitions:
     type: "object"
     properties:
       id:
-        type: "integer"
-        format: "int64"
+        type: "string"
       name:
         type: "string"
       url:
@@ -692,7 +690,7 @@ definitions:
     properties:
       id:
         type: "integer"
-        format: "int64"
+        format: "int32"
       name:
         type: "string"
       address:

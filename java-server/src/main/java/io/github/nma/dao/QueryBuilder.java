@@ -34,6 +34,27 @@ public class QueryBuilder {
     }
 
     /**
+     * Creates a query making template that handles upsert logic for us. IDs are Integers
+     *
+     * @param collection
+     * @param key
+     * @param toFind
+     * @param pojo
+     * @param clazz
+     * @param <T>
+     */
+    public static <T> void upsert(MongoCollection collection, String key, Integer toFind, T pojo, Class<T> clazz) {
+        BasicDBObject findQuery = new BasicDBObject(key, toFind);
+        FindOne findOne = collection.findOne(findQuery.toString());
+        T founbObject = findOne.as(clazz);
+        if (founbObject != null) {
+            collection.update(findQuery.toString()).with(pojo);
+        } else {
+            collection.save(pojo);
+        }
+    }
+
+    /**
      * Creates a helper method to search our mongo collection.
      *
      * @param collection
@@ -45,6 +66,22 @@ public class QueryBuilder {
      * @throws DaoExceptions.NoMatchFound
      */
     public static <T> T find(MongoCollection collection, String key, String toFind, Class<T> clazz) throws DaoExceptions.NoMatchFound {
+        BasicDBObject findQuery = new BasicDBObject(key, toFind);
+        return find(collection, findQuery, clazz);
+    }
+
+    /**
+     * Creates a helper method to search our mongo collection.
+     *
+     * @param collection
+     * @param key
+     * @param toFind
+     * @param clazz
+     * @param <T>
+     * @return
+     * @throws DaoExceptions.NoMatchFound
+     */
+    public static <T> T find(MongoCollection collection, String key, Integer toFind, Class<T> clazz) throws DaoExceptions.NoMatchFound {
         BasicDBObject findQuery = new BasicDBObject(key, toFind);
         return find(collection, findQuery, clazz);
     }

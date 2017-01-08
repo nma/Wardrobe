@@ -1,7 +1,6 @@
 package io.github.nma.controllers;
 
 import io.github.nma.WardrobeTestModule;
-import io.github.nma.dao.DrawerDao;
 import io.github.nma.dao.StackDao;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
@@ -21,9 +20,6 @@ public class MainControllerTest {
 
     @Inject
     ShelfDao shelfDao;
-
-    @Inject
-    DrawerDao drawerDao;
 
     @Inject
     ShelfToStackDao shelfBelongsToStackDao;
