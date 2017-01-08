@@ -1,11 +1,11 @@
-package com.nma.wardrobe.controllers;
+package io.github.nma.controllers;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.nma.wardrobe.dao.DrawerDao;
-import com.nma.wardrobe.dao.ShelfDao;
-import com.nma.wardrobe.dao.ShelfToStackDao;
-import com.nma.wardrobe.dao.StackDao;
+import io.github.nma.dao.DrawerDao;
+import io.github.nma.dao.ShelfDao;
+import io.github.nma.dao.ShelfToStackDao;
+import io.github.nma.dao.StackDao;
 
 /**
  *

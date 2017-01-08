@@ -1,4 +1,4 @@
-package com.nma.wardrobe.dao;
+package io.github.nma.dao;
 
 /**
  * @author Nick Ma (nickma38@gmail.com)

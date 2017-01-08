@@ -1,4 +1,4 @@
-package com.nma.wardrobe.dao;
+package io.github.nma.dao;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;

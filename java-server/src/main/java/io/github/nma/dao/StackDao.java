@@ -1,4 +1,4 @@
-package com.nma.wardrobe.dao;
+package io.github.nma.dao;
 
 import java.util.ArrayList;
 import java.util.List;

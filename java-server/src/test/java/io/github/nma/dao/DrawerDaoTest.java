@@ -1,4 +1,4 @@
-package com.nma.wardrobe.dao;
+package io.github.nma.dao;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -12,7 +12,7 @@ import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
 
 import com.google.inject.Inject;
-import com.nma.wardrobe.WardrobeTestModule;
+import io.github.nma.WardrobeTestModule;
 
 import io.swagger.model.Drawer;
 

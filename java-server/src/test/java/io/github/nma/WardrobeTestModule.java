@@ -1,7 +1,6 @@
-package com.nma.wardrobe;
+package io.github.nma;
 
 import com.google.inject.AbstractModule;
-import com.nma.wardrobe.WardrobeModule;
 
 /**
  * @author Nick Ma (nickma38@gmail.com)

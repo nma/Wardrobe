@@ -1,14 +1,14 @@
-package com.nma.wardrobe.controllers;
+package io.github.nma.controllers;
 
+import io.github.nma.WardrobeTestModule;
+import io.github.nma.dao.DrawerDao;
+import io.github.nma.dao.StackDao;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
 
 import com.google.inject.Inject;
-import com.nma.wardrobe.WardrobeTestModule;
-import com.nma.wardrobe.dao.DrawerDao;
-import com.nma.wardrobe.dao.ShelfDao;
-import com.nma.wardrobe.dao.ShelfToStackDao;
-import com.nma.wardrobe.dao.StackDao;
+import io.github.nma.dao.ShelfDao;
+import io.github.nma.dao.ShelfToStackDao;
 
 /**
  * @author Nick Ma (nickma38@gmail.com)

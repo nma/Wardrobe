@@ -1,4 +1,4 @@
-package com.nma.wardrobe.dao;
+package io.github.nma.dao;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -17,7 +17,6 @@ import io.swagger.model.Stack;
 public class TestFactory {
     public static Stack createStack(String stackName) {
         Stack stack = new Stack();
-        stack.setId(stackName.toLowerCase());
         stack.setName(stackName);
 
         return stack;
@@ -33,7 +32,6 @@ public class TestFactory {
 
     public static Shelf createShelf(String serviceName) {
         Shelf shelf = new Shelf();
-        shelf.setId(serviceName.toLowerCase());
         shelf.setName(serviceName);
 
         return shelf;

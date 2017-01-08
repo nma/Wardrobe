@@ -1,7 +1,7 @@
-package com.nma.wardrobe.dao;
+package io.github.nma.dao;
 
 import com.google.inject.Inject;
-import com.nma.wardrobe.WardrobeTestModule;
+import io.github.nma.WardrobeTestModule;
 import io.swagger.model.Shelf;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Guice;

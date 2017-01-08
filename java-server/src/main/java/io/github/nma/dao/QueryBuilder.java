@@ -1,12 +1,11 @@
-package com.nma.wardrobe.dao;
+package io.github.nma.dao;
 
 import com.mongodb.BasicDBObject;
-import com.nma.wardrobe.utils.stream.StreamUtils;
+import io.github.nma.utils.stream.StreamUtils;
 import org.jongo.FindOne;
 import org.jongo.MongoCollection;
 
 import java.util.Optional;
-import java.util.zip.DataFormatException;
 
 /**
  * @author Nick Ma (nickma38@gmail.com)

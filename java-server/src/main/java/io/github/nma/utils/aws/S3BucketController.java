@@ -1,4 +1,4 @@
-package com.nma.wardrobe.utils.aws;
+package io.github.nma.utils.aws;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;

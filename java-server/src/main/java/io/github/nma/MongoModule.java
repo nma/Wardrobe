@@ -1,16 +1,16 @@
-package com.nma.wardrobe;
+package io.github.nma;
 
-import com.github.fakemongo.Fongo;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.mongodb.DB;
+import com.mongodb.MongoClient;
 
 import java.net.UnknownHostException;
 
 /**
  * @author Nick Ma (nickma38@gmail.com)
  */
-public class FongoModule extends AbstractModule{
+public class MongoModule extends AbstractModule{
     @Override
     protected void configure() {
 
@@ -18,6 +18,8 @@ public class FongoModule extends AbstractModule{
 
     @Provides
     public DB mongoDb() throws UnknownHostException {
-        return new Fongo("test").getDB("wardrobe");
+        MongoClient mongoClient = new MongoClient();
+
+        return mongoClient.getDB("wardrobe");
     }
 }

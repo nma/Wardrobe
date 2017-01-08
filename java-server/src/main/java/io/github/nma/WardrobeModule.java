@@ -1,4 +1,4 @@
-package com.nma.wardrobe;
+package io.github.nma;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;

@@ -1,4 +1,4 @@
-package com.nma.wardrobe.utils.stream;
+package io.github.nma.utils.stream;
 
 import java.util.Iterator;
 import java.util.stream.Stream;

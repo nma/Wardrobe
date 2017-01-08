@@ -1,4 +1,4 @@
-package com.nma.wardrobe.dao;
+package io.github.nma.dao;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import com.google.inject.Inject;
-import com.nma.wardrobe.WardrobeTestModule;
+import io.github.nma.WardrobeTestModule;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
